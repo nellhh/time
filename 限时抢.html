@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		window.onload=function(){
+			showTime();
+		}
+		function showTime(){
+			var endtime= new Date('2016/9/1,00:00:01');     //自定义结束时间  
+		　　var now = new Date();    //获取当前时间
+		　　var lefttime = parseInt((endtime.getTime()-now.getTime())/1000);//剩下的时间（毫秒/1000=秒）
+			var d = parseInt(lefttime/(24*60*60));
+			var h = parseInt(lefttime/(60*60)%24);//取模运算
+			var m = parseInt(lefttime/60%60);
+			var s = lefttime%60;
+		
+		document.getElementById('span1').innerHTML=d+'天'+h+'小时'+m+'分'+s+'秒';
+		if(lefttime<=0){
+		document.getElementById('span1').innerHTML='庆祝吧！';	
+		}
+
+		t=setTimeout(showTime,500);			
+		
+		}
+	</script>
+</head>
+<body>
+<div id="div1"> 
+<div id="div2">还剩 <span id="span1"></span></div>
+</div>
+</body>
+</html>

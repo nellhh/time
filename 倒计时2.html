@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var now = new Date();//现在时间
+			var endTime = new Date('2016,06,06');//结束时间
+			var leftTime = Math.ceil((endTime.getTime()-now.getTime())/(24*60*60*1000));//剩余时间
+
+			document.getElementById('span1').innerHTML=leftTime;
+
+		}
+	</script>
+</head>
+<body>
+<div class="div1">
+	<div class="div2"><span id="span1"></span></div>
+</div>
+
+</body>
+</html>
